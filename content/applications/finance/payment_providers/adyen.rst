@@ -127,12 +127,12 @@ Then, open your Adyen Merchant Account, go to :menuselection:`Account --> Settin
    - If you configure Odoo to capture amounts manually, make sure to set the **Capture Delay** to
      **manual** on Adyen. Otherwise, the transaction will be blocked in the authorized state in
      Odoo.
-   - Odoo doesn't support the partial capture yet. Be aware that if you make a partial capture from
-     Adyen's interface, Odoo will manage it as if it was a full capture.
 
 .. note::
-   After **7 days**, if the transaction hasn't been captured yet, the customer has the right to
-   **revoke** it.
+   - After **7 days**, if the transaction hasn't been captured yet, the customer has the right to
+     **revoke** it.
+   - Your Adyen account is set to only allow single partial capture by default, reach Adyen support
+     to enable multiple partial capture if needed.
 
 .. seealso::
    :doc:`../payment_providers`
