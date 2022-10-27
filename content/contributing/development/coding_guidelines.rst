@@ -922,8 +922,8 @@ Symbols and Conventions
 
 .. _contributing/development/js_guidelines:
 
-Javascript and CSS
-==================
+Javascript and (S)CSS
+=====================
 
 Static files organization
 --------------------------
@@ -970,8 +970,8 @@ More precise JS guidelines are detailed in the `github wiki  <https://github.com
 You may also have a look at existing API in Javascript by looking Javascript
 References.
 
-CSS coding guidelines
----------------------
+(S)CSS coding guidelines
+------------------------
 
 - Prefix all your classes with *o_<module_name>* where *module_name* is the
   technical name of the module ('sale', 'im_chat', ...) or the main route
@@ -981,6 +981,8 @@ CSS coding guidelines
 - Avoid using *id* tag
 - Use Bootstrap native classes
 - Use underscore lowercase notation to name class
+
+Read more on :ref:`SCSS guidelines<contributing/scss>`.
 
 .. _contributing/development/git_guidelines:
 
