@@ -99,29 +99,6 @@ that Odoo is trying to redistribute would get rejected by some recipients' email
 
 To avoid that problem, make sure all emails use a "From" address from the same authorized domain.
 
-If the MTA supports `SRS (Sender Rewriting Scheme) <https://en.wikipedia.org/wiki/Sender_Rewriting
-_Scheme>`_, SRS can be enabled to handle these situations. However, that is more complex and
-requires more technical knowledge that is not meant to be covered by this documentation.
-
-Instead, Odoo can be configured to do something similar by itself:
-
-#. Set the :guilabel:`Alias Domain` name in the :menuselection:`Settings --> General Settings
-   --> Discuss`.
-
-   .. image:: email_servers/alias-domain.png
-      :alt: Setting the domain alias configuration on Odoo.
-
-#. Turn on :doc:`developer mode </applications/general/developer_mode>`.
-#. Go to :menuselection:`Settings --> Technical --> Parameters --> System Parameters`.
-#. Add one system parameter from the following list:
-
-   * To use the same "From" address for *all* outgoing messages, use the key `mail.force.smtp.from`
-     and set that address as value (such as `outgoing@mycompany.example.com`).
-   * To keep the original "From" address for emails that use the same domain, but change it for
-     emails that use a different domain, use the key `mail.dynamic.smtp.from` and set the value as
-     the email address that should be used in those cases (such as `outgoing@mycompany.example.com`
-     ).
-
 .. _email_communication/inbound_messages:
 
 Manage inbound messages
