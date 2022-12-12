@@ -1,0 +1,11 @@
+.bad-example {
+    border: 1px solid red;
+    border-left-width: 3px;
+    background: white;
+}
+
+.good-example {
+    border: 1px solid green;
+    border-left-width: 3px;
+    background: white;
+}

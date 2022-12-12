@@ -29,24 +29,28 @@ At this stage all "browser-specific-decoration" rules have been stripped away, b
 
 You can rely on these rules.
 
-For example, apply `display: block;` to a `<div/>` is normally not necessary.
+.. example::
 
-.. code-block:: css
+   For example, apply `display: block;` to a `<div/>` is normally not necessary.
 
-   div.myElement {
-      display: block;
-      /* not needed 99% of the time */
-   }
+   .. code-block:: css
 
-For the same reason, sometimes you may opt to switch html tag rather than adding a new CSS rule.
+      div.element {
+         display: block;
+         /* not needed 99% of the time */
+      }
 
-.. code-block:: css
+.. example::
 
-   span.myElement {
-      display: block;
-      /* replace <span> with <div> instead
-         to get 'display: block' by default */
-   }
+   For the same reason, sometimes you may opt to switch html tag rather than adding a new CSS rule.
+
+   .. code-block:: css
+
+      span.element {
+         display: block;
+         /* replace <span> with <div> instead
+            to get 'display: block' by default */
+      }
 
 
 Follows a non-comprehensive list of default rules:
@@ -56,22 +60,22 @@ Follows a non-comprehensive list of default rules:
 
    * - Tag / Attribute
      - Defaults
-   * - | `<div/>`, `<section/>`,
-       | `<header/>`, `<footer/>` ...
+   * - `<div/>`, `<section/>`,
+       `<header/>`, `<footer/>` ...
      - `display: block`
-   * - | `<span/>`, `<a/>`
-       | `<em/>`, `<b/>` ...
+   * - `<span/>`, `<a/>`
+       `<em/>`, `<b/>` ...
      - `display: inline`
-   * - | `<button/>`, `<label/>`
-       | `<output/>`...
+   * - `<button/>`, `<label/>`
+       `<output/>`...
      - `display: inline-block`
    * - `<img/>`, `<svg/>`
      - `vertical-align: middle`
    * - `<summary/>`, `[role="button"]`
      - `cursor: pointer;`
    * - `<q/>`
-     - | `:before {content: open-quote}`
-       | `:after  {content: close-quote}`
+     - `:before {content: open-quote}`
+       `:after  {content: close-quote}`
    * - ...
      - ...
 
@@ -82,64 +86,65 @@ Follows a non-comprehensive list of default rules:
 Use tags
 ========
 
-| It may seems obvious, but the most simple and **consistent** way to "convert" a text to a title is to use a title html tag (`<h1>`, `<h2>`, ...).
+| It may seems obvious, but the most simple and **consistent** way to "convert" text to a title is to use a title html tag (`<h1>`, `<h2>`, ...).
 | Beside reboot rules, mostly all tags carry decorative style defined by Odoo.
 
 
-Dont'
+.. example::
 
+   Don't
 
-.. tabs::
+   .. tabs::
 
-   .. code-tab:: html XML
+      .. code-tab:: html XML
 
-      <span class="o_module_custom_title">
-         Hello There!
-      </span>
+         <span class="o_module_custom_title">
+            Hello There!
+         </span>
 
-      <span class="o_module_custom_subtitle">
-         I'm the subtitle.
-      </span>
+         <span class="o_module_custom_subtitle">
+            I'm the subtitle.
+         </span>
 
-   .. code-tab:: css SCSS
+      .. code-tab:: css SCSS
 
-      .o_module_custom_title {
-         display: block;
-         font-size: 120%;
-         font-weight: bold;
-         animation: 1s linear 1s mycustomAnimation;
-      }
+         .o_module_custom_title {
+            display: block;
+            font-size: 120%;
+            font-weight: bold;
+            animation: 1s linear 1s mycustomAnimation;
+         }
 
-      .o_module_custom_subtitle {
-         display: block;
-         font-size: 12px;
-         font-weight: bold;
-         animation: 2s linear 1s mycustomAnimation;
-      }
+         .o_module_custom_subtitle {
+            display: block;
+            font-size: 12px;
+            font-weight: bold;
+            animation: 2s linear 1s mycustomAnimation;
+         }
 
-Do
+   Do
 
-.. tabs::
+   .. tabs::
 
-   .. code-tab:: html XML
+      .. code-tab:: html XML
 
-      <h5 class="o_module_custom_title">
-         Hello There!
-      </h5>
+         <h5 class="o_module_custom_title">
+            Hello There!
+         </h5>
 
-      <div class="o_module_custom_subtitle">
-         <b><small>I'm the subtitle.</small></b>
-      </div>
+         <div class="o_module_custom_subtitle">
+            <b><small>I'm the subtitle.</small></b>
+         </div>
 
-   .. code-tab:: css SCSS
+      .. code-tab:: css SCSS
 
-      .o_module_custom_title {
-         animation: 1s linear 1s mycustomAnimation;
-      }
+         .o_module_custom_title {
+            animation: 1s linear 1s mycustomAnimation;
+         }
 
-      .o_module_custom_subtitle {
-         animation: 2s linear 1s mycustomAnimation;
-      }
+         .o_module_custom_subtitle {
+            animation: 2s linear 1s mycustomAnimation;
+         }
 
 
 .. note::

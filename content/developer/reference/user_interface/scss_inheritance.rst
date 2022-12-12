@@ -15,7 +15,7 @@ Managing SCSS assets in Odoo is not as straightforward as it is in some other en
 Modularity is key, the inheritance scheme described further allows Odoo to:
 
 - customise Bootstrap CSS framework;
-- handle two different design for Community and Enterprise webclients;
+- handle two different webclient designs (Community and Enterprise);
 - handle backend and frontend bundles separately (including the user's website design);
 - contextually load necessary assets only;
 - handle multiple color-schemes (eg. dark-mode);
