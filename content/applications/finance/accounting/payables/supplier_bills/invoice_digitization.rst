@@ -1,3 +1,5 @@
+.. _invoice-digitization:
+
 ================================
 AI-powered document digitization
 ================================
@@ -35,6 +37,8 @@ From the :guilabel:`Accounting Dashboard`, click on the :guilabel:`Upload` butto
 bills journal.
 Alternatively, go to :menuselection:`Accounting --> Customers --> Invoices` or
 :menuselection:`Accounting --> Vendors --> Bills` and select :guilabel:`Upload`.
+
+.. _invoice-digitization/email-alias:
 
 Upload invoices using an email alias
 ------------------------------------

@@ -1,3 +1,5 @@
+.. _Manage-vendor-bills:
+
 ===================
 Manage vendor bills
 ===================
