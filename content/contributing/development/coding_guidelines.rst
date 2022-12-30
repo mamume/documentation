@@ -1007,9 +1007,9 @@ Syntax and Formatting
       }
 
 - four (4) space indents, no tabs;
-- 80 characters wide columns;
-- opening brace (`{`): empty space after the last selector
-- closing brace (`}`): on its own new line.
+- columns of max. 80 characters wide;
+- opening brace (`{`): empty space after the last selector;
+- closing brace (`}`): on its own new line;
 - one line for each declaration;
 - meaningful use of whitespace.
 
@@ -1059,7 +1059,7 @@ Syntax and Formatting
 Properties order
 ----------------
 
-Order properties from the "outside", starting from `position` and ending with decorative rules (`font`,  `filter`...).
+Order properties from the "outside" in, starting from `position` and ending with decorative rules (`font`,  `filter`, etc.).
 
 :ref:`Scoped SCSS variables <scss/scoped-scss-var>` and :ref:`CSS variables <scss/css-var>` must be placed at the very top, followed by an empty line separating them from other declarations.
 
@@ -1086,7 +1086,7 @@ Order properties from the "outside", starting from `position` and ending with de
 Naming Conventions
 ------------------
 
-Naming conventions in CSS are hugely useful in making your code more strict, transparent and informative.
+Naming conventions in CSS are incredibly useful in making your code more strict, transparent and informative.
 
 | Avoid `id` selectors and prefix your classes with `o_<module_name>`, where `<module_name>` is the
   technical name (`sale`, `im_chat`, ...) or the main route
@@ -1094,7 +1094,7 @@ Naming conventions in CSS are hugely useful in making your code more strict, tra
   `website_forum` module).
 | The only exception for this rule is the webclient: it simply uses `o_` prefix.
 
-Avoid creating hyper-specific classes and variables names. When naming nested elements, opt for the "Grandchild" approach.
+Avoid creating hyper-specific classes and variable names. When naming nested elements, opt for the "Grandchild" approach.
 
 .. rst-class:: bg-light
 .. example::
@@ -1172,9 +1172,9 @@ Our standard convention is `$-[variable name]`.
 SCSS Mixins and Functions
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Our standard convention is `o-[name]`. Use descriptive names. When naming functions, use verbs in the imperative form (eg. `get`, `make`, `apply`...).
+Our standard convention is `o-[name]`. Use descriptive names. When naming functions, use verbs in the imperative form (e.g.: `get`, `make`, `apply`...).
 
-Name optional argument as :ref:`scoped variables <scss/scoped-scss-var>`, so `$-[argument]`
+Name optional arguments in the :ref:`scoped variables <scss/scoped-scss-var>`, so `$-[argument]`
 
 .. code-block:: html
 
@@ -1200,7 +1200,7 @@ Name optional argument as :ref:`scoped variables <scss/scoped-scss-var>`, so `$-
 CSS Variables
 ~~~~~~~~~~~~~
 
-In Odoo the use of CSS variables is strictly DOM-related. Use them for **contextually** adapt design and layout.
+In Odoo the use of CSS variables is strictly DOM-related. Use them to **contextually** adapt the design and layout.
 
 Our standard convention is BEM, so `--[root]__[element]-[property]--[modifier]`.
 
@@ -1228,10 +1228,10 @@ Our standard convention is BEM, so `--[root]__[element]-[property]--[modifier]`.
 Use of CSS Variables
 --------------------
 
-In Odoo the use of CSS variables is strictly DOM-related, meaning that are used for **contextually** adapt design and layout rather than to manage the global design-system.
-The typical use is the definition of components' properties that may adapt in specific context or when some circumstances occur.
+In Odoo the use of CSS variables is strictly DOM-related, meaning that are used to **contextually** adapt the design and layout rather than to manage the global design-system.
+These are typically used when a component's properties can vary in specific contexts or in other circumstances.
 
-We define these properties into the component's main block, providing fallback used as defaults.
+We define these properties inside the component's main block, providing default fallbacks.
 
 
 .. code-block:: scss
@@ -1293,8 +1293,8 @@ The implementation of the previous example should be improved by adding SCSS var
 The `:root` pseudo-class
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-Define CSS variables on the `:root` pseudo-class is a technique we normally **don't use** in Odoo's UI.
-The practice is commonly used to access and modify CSS variables globally, operations that we perform using SCSS instead.
+Defining CSS variables on the `:root` pseudo-class is a technique we normally **don't use** in Odoo's UI.
+The practice is commonly used to access and modify CSS variables globally, we perform this using SCSS instead.
 
 Exceptions to this rule should be fairly apparent, such as templates shared across bundles that require a certain level of contextual awareness in order to be rendered properly.
 

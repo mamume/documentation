@@ -8,10 +8,10 @@
 UI Icons
 ========
 
-Odoo user interface mostly relies on `FontAwesome4 icons <https://fontawesome.com/v4/icons/>`_.
+Odoo's user interface mostly relies on `FontAwesome4 icons <https://fontawesome.com/v4/icons/>`_.
 
 To cover FontAwesome's lack of iconography for specific functionalities, we designed our own icon-font.
-These icons can be rendered using the main `oi` class in conjunction with the specific icon class, eg:
+These icons can be rendered using the main `oi` class in conjunction with the specific icon class, e.g.:
 
 .. example::
    .. code-block:: html

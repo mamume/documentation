@@ -1,37 +1,47 @@
-=========
-SCSS Tips
-=========
+===============================
+Write lean easy-to-maintain CSS
+===============================
 
-There are many ways to lean and simplify SCSS. The first step is to establish if custom code is needed at all.
+There are many ways to lean and simplify SCSS. The first step is to establish if custom code is
+needed at all.
 
-Odoo's webclient has been designed to be modular, meaning that (potentially all) classes can be shared across views.
-Check the code before creating a new class. Chances are that there is already a class or a tag doing exactly what you're looking for.
+Odoo's webclient has been designed to be modular, meaning that (potentially all) classes can be
+shared across views.
+Check the code before creating a new class. Chances are that there is already a class or a tag
+doing exactly what you're looking for.
 
 
-On top of that, Odoo relies on `Bootstrap <https://getbootstrap.com/docs/5.1/getting-started/introduction/>`_ (BS), one of the most complete CSS framework available. The framework has been customized in order to match Odoo design (both community and enterprise versions), meaning that you can use any BS class, directly in Odoo and achieve a visual result consistent with our UI.
+On top of that, Odoo relies on `Bootstrap <https://getbootstrap.com/docs/5.1/getting-started/introduction/>`_ (BS),
+one of the most complete CSS frameworks available. The framework has been customized in order
+to match Odoo's design (both community and enterprise versions), meaning that you can use any
+BS class, directly in Odoo and achieve a visual result that it's consistent with our UI.
 
 .. warning::
-   The fact that a class achieve the desired visual result doesn't necessarily mean that's the right one for the job. Be aware of classes triggering JS behaviors, for example.
+   The fact that a class achieves the desired visual result doesn't necessarily mean that it's the
+   right one for the job. Be aware of classes triggering JS behaviors, for example.
 
 .. warning::
-   Take care about classes semantic. To apply a **button class** to a **title** is not just semantically wrong, it may also lead to migration issues and visual inconsistencies.
+   Be careful about class semantics. To apply a **button class** to a **title** is not just
+   semantically wrong, it may also lead to migration issues and visual inconsistencies.
 
 
 The following sections describe tips to strip-down SCSS lines **when custom-code is the only way to go**.
 
-Browsers defaults
-=================
+Browser defaults
+================
 
-By default, each browser renders content using an *user agent stylesheet*.
+By default, each browser renders content using a *user agent stylesheet*.
 To overcome inconsistencies, some of these rules are overridden by `Bootstrap Reboot <https://getbootstrap.com/docs/5.1/content/reboot/>`_.
 
-At this stage all "browser-specific-decoration" rules have been stripped away, but a big chunk of rules defining basic layout information are maintained (or reinforced by *Reboot* for consistency reason).
+At this stage all "browser-specific-decoration" rules have been stripped away, but a big chunk of
+rules defining basic layout information are maintained (or reinforced by *Reboot* for consistency
+reason).
 
 You can rely on these rules.
 
 .. example::
 
-   For example, apply `display: block;` to a `<div/>` is normally not necessary.
+   For example, applying `display: block;` to a `<div/>` is normally not necessary.
 
    .. code-block:: css
 
@@ -42,7 +52,7 @@ You can rely on these rules.
 
 .. example::
 
-   For the same reason, sometimes you may opt to switch html tag rather than adding a new CSS rule.
+   In this instance, you may opt to switching the html tag rather than adding a new CSS rule.
 
    .. code-block:: css
 
@@ -53,7 +63,7 @@ You can rely on these rules.
       }
 
 
-Follows a non-comprehensive list of default rules:
+Here's a non-comprehensive list of default rules:
 
 .. list-table::
    :header-rows: 1
@@ -83,11 +93,11 @@ Follows a non-comprehensive list of default rules:
 .. seealso::
    Bootstrap Reboot `on github <https://github.com/twbs/bootstrap/blob/1a6fdfae6b/scss/_reboot.scss>`_
 
-Use tags
-========
+HTML tags
+=========
 
-| It may seems obvious, but the most simple and **consistent** way to "convert" text to a title is to use a title html tag (`<h1>`, `<h2>`, ...).
-| Beside reboot rules, mostly all tags carry decorative style defined by Odoo.
+| It may seem obvious, but the simplest and most **consistent** way of making text look like a title is to use an header tag (`<h1>`, `<h2>`, ...).
+| Besides reboot rules, mostly all tags carry decorative styles defined by Odoo.
 
 
 .. example::
@@ -103,7 +113,7 @@ Use tags
          </span>
 
          <span class="o_module_custom_subtitle">
-            I'm the subtitle.
+            I'm a subtitle.
          </span>
 
       .. code-tab:: css SCSS
@@ -133,7 +143,7 @@ Use tags
          </h5>
 
          <div class="o_module_custom_subtitle">
-            <b><small>I'm the subtitle.</small></b>
+            <b><small>I'm a subtitle.</small></b>
          </div>
 
       .. code-tab:: css SCSS
@@ -148,17 +158,20 @@ Use tags
 
 
 .. note::
-   Beside reducing the amount of code, a modular-design approach (use classes, tags, mixins...) keeps the visual result consistent and easily **maintainable**.
+   Besides reducing the amount of code, a modular-design approach (use classes, tags, mixins...)
+   keeps the visual result consistent and easily **maintainable**.
 
-   Following the last example, if Odoo titles' design changes, these changes will be applied in the `o_module_custom_title` element too since it's using a the `<h5>` tag.
+   Following the last example, if Odoo titles' design changes, these changes will be applied in
+   the `o_module_custom_title` element too since it's using a the `<h5>` tag.
 
 Utility classes
 ===============
 
-Our framework defines a multitude of utility classes designed to cover almost all layout/design/interaction needs.
-The simple fact that a class exists justify its use over custom CSS whenever is possible.
+Our framework defines a multitude of utility classes designed to cover almost all
+layout/design/interaction needs.
+The simple fact that a class already exists justifies its use over custom CSS whenever possible.
 
-Take the example of `position-relative`. What does is quite self-explicative, but *why* should be used maybe a little less.
+Take the example of `position-relative`.
 
 .. code-block:: css
 
@@ -166,18 +179,20 @@ Take the example of `position-relative`. What does is quite self-explicative, bu
       position: relative !important;
    }
 
-Since an utility-class is defined, any CSS line with declaration `position: relative` is **potentially** redundant.
+Since a utility-class is defined, any CSS line with the declaration `position: relative` is **potentially**
+redundant.
 
-Odoo relies on the default `Bootstrap utility-classes <https://getbootstrap.com/docs/5.1/utilities/background/>`_ stack and define its own ones using `Bootstrap API <https://getbootstrap.com/docs/5.1/utilities/api/>`_.
+Odoo relies on the default `Bootstrap utility-classes <https://getbootstrap.com/docs/5.1/utilities/background/>`_
+stack and defines its own using `Bootstrap API <https://getbootstrap.com/docs/5.1/utilities/api/>`_.
 
 .. seealso::
    | Bootstrap `utility classes <https://getbootstrap.com/docs/5.1/utilities/api/>`_
    | Odoo `custom utilities on github <https://github.com/odoo/odoo/blob/16.0/addons/web/static/src/scss/utilities_custom.scss>`_
 
-Handle utility-classes verbosity
---------------------------------
+Handling utility-classes verbosity
+----------------------------------
 
-The downside of utility-classes is the potential lack of readability, eg:
+The downside of utility-classes is the potential lack of readability, e.g.:
 
 
 .. code-block:: html
@@ -189,9 +204,9 @@ The downside of utility-classes is the potential lack of readability, eg:
 
 To overcome the issue you may combine different approaches:
 
-- in qweb attributes, use classes to be toggled *on-the-fly* only
-- use new lines for each attribute
-- order classes using the convention `[odoo component] [bootstrap component] [css declaration order]`
+- in Qweb attributes, only use classes to be toggled *on-the-fly*;
+- use new lines for each attribute;
+- order classes using the convention `[odoo component] [bootstrap component] [css declaration order]`.
 
 .. code-block:: html
 
