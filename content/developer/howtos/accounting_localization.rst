@@ -13,7 +13,7 @@ Installation procedure
 ======================
 
 On installing the `account <{GITHUB_PATH}/addons/account>`_ module, the localization module corresponding to the country code of the company is installed automatically.
-In case of no country code set or no localization module found, the `l10n_generic_coa <{GITHUB_PATH}/addons/l10n_generic_coa>`_ (US) localization module is installed by default.
+In case of no country code set, or no localization module is found, the `l10n_generic_coa <{GITHUB_PATH}/addons/l10n_generic_coa>`_ (US) localization module is installed by default.
 Check `post init hook <{GITHUB_PATH}/addons/account/__init__.py>`_ for details.
 
 For example, `l10n_ch <{GITHUB_PATH}/addons/l10n_ch>`_ will be installed if the company has ``Switzerland`` as country.
